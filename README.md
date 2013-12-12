@@ -1,4 +1,4 @@
-store.js
+Angular Store
 ========
 
 Persistent storage for Angular
