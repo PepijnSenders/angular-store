@@ -1,5 +1,5 @@
 angular.module('angular-store', [])
-       .factory('Store', function () {
+       .factory('Store', function ($window, $document) {
         "use strict";
 
         var Store = {
@@ -162,11 +162,11 @@ angular.module('angular-store', [])
                     this.engine = engine;
                 } else {
                     this.engine = 'Cookie';
-                    if ('localStorage' in window && window.localStorage !== null) {
+                    if ('localStorage' in $window && $window.localStorage !== null) {
                         this.engine = 'LocalStorage';
                     } else {
                         try {
-                            if (document.getElementById('oPersistInput') && document.getElementById('oPersistInput').addBehavior) {
+                            if ($document.getElementById('oPersistInput') && $document.getElementById('oPersistInput').addBehavior) {
                                 this.engine = 'UserData';
                             }
                         } catch(e) {}
@@ -245,7 +245,7 @@ angular.module('angular-store', [])
              */
             _getCookie: function(name) {
                 var nameEQ = name + "=";
-                var ca = document.cookie.split(';');
+                var ca = $document.cookie.split(';');
                 for(var i=0;i < ca.length;i++) {
                     var c = ca[i];
                     while (c.charAt(0) === ' ') c = c.substring(1, c.length);
@@ -269,7 +269,7 @@ angular.module('angular-store', [])
                     date.setTime(date.getTime() + (hours*60*60*1000));
                     expires = "; expires=" + date.toGMTString();
                 }
-                document.cookie = name + "=" + this.contentEncode(value) + expires + "; path=/";
+                $document.cookie = name + "=" + this.contentEncode(value) + expires + "; path=/";
             },
 
             /**
