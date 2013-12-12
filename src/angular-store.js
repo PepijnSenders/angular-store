@@ -175,6 +175,18 @@ angular.module('angular-store', [])
             },
 
             /**
+             * Get engine
+             * @private
+             * @return {String} engine
+             */
+            _getEngine: function() {
+                if (!this.engine) {
+                    throw 'No engine defined, please define an engine';
+                }
+                return this.engine;
+            },
+
+            /**
              * Content encode for storage
              * @param  {mixed} value   mixed to encode
              * @param  {integer} expires number of seconds
@@ -212,7 +224,7 @@ angular.module('angular-store', [])
              * @return {void}
              */
             set: function(name, value, hours) {
-                this['_set' + this.engine](name, value, hours);
+                this['_set' + this._getEngine()](name, value, hours);
             },
 
             /**
@@ -223,7 +235,7 @@ angular.module('angular-store', [])
              * @return {void}
              */
             get: function(name) {
-                return this['_get' + this.engine](name);
+                return this['_get' + this._getEngine()](name);
             },
 
             /**
@@ -234,7 +246,7 @@ angular.module('angular-store', [])
              * @return {void}
              */
             del: function(name) {
-                this['_del' + this.engine](name);
+                this['_del' + this._getEngine()](name);
             },
 
             /**
