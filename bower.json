@@ -1,11 +1,11 @@
 {
-  "name": "Angular Store",
+  "name": "Angular Storage",
   "version": "0.0.0",
   "authors": [
     "Pepijn Senders <p.senders92@gmail.com>"
   ],
   "description": "Angular cross-browser, localStorage/Cookie/UserData implementation",
-  "main": "src/angular-store.js",
+  "main": "src/angular-storage.js",
   "keywords": [
     "localStorage",
     "cookies",

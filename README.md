@@ -6,7 +6,7 @@ Persistent storage for Angular
 Tries localstorage first, then IE's persistent storage and if all fails: cookies.
 
 ```
-bower install --save angular-store
+bower install --save angular-storage
 ```
 
 ### Dependencies:

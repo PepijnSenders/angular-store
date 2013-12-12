@@ -1,8 +1,8 @@
 {
-  "name": "angular-store",
+  "name": "angular-storage",
   "version": "0.0.0",
   "description": "Angular cross-browser, localStorage/Cookie/UserData implementation",
-  "main": "src/angular-store.js",
+  "main": "src/angular-storage.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

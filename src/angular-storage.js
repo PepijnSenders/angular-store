@@ -1,4 +1,4 @@
-angular.module('angular-store', [])
+angular.module('angular-storage', [])
        .factory('Store', function () {
         "use strict";
 
