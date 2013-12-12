@@ -359,6 +359,9 @@ angular.module('angular-store', [])
             }
         };
 
+        // Set store engine
+        Store.setEngine();
+
         return Store;
 
   });
