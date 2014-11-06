@@ -1,5 +1,5 @@
 angular.module('angular-store', [])
-       .factory('Store', function ($window, $document) {
+       .factory('Store', ['$window', '$document', function ($window, $document) {
         "use strict";
 
         var Store = {
@@ -376,4 +376,4 @@ angular.module('angular-store', [])
 
         return Store;
 
-  });
+  }]);
